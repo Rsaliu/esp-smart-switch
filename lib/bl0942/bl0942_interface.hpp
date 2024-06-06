@@ -9,12 +9,17 @@ enum class AC_FREQUENCY{
 };
 class BL0942Interface{
     public:
-        BL0942Interface();
+        BL0942Interface(){
+
+        }
         virtual error_type_t Init();
         virtual error_type_t GetRMSVoltage(double&);
         virtual error_type_t GetRMSCurrent(double&);
         virtual error_type_t GetActivePower(double&);
         virtual error_type_t GetEnergy(double&);
+        virtual ~BL0942Interface(){
+            
+        }
     protected:
         static const float DEFAULT_SHUNT;
         static const uint32_t DEFAULT_VOLTAGE_RATIO;
